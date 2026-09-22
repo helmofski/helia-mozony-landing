@@ -61,7 +61,7 @@
     --s-1:  1.2rem;
     --s-2:  1.45rem;
     --s-3:  clamp(1.75rem, 1.15rem + 2.1vw, 2.6rem);
-    --s-4:  clamp(2.9rem, 1.4rem + 5.6vw, 5.6rem);
+    --s-4:  clamp(2.6rem, 1.4rem + 4.4vw, 4.7rem);
 
     --wrap: 1080px;
   }
@@ -206,6 +206,32 @@
   .cta-feedback.is-fail .msg-ok { display: none; }
   .cta-feedback.is-fail .msg-fail { display: inline; }
 
+  /* ---------- illustrations ---------- */
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 5vw, 60px); align-items: center; }
+  @media (max-width: 940px) { .hero-grid { grid-template-columns: 1fr; } }
+  .viz { margin: 0; }
+  .viz svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 18px 40px rgba(20,22,26,0.10)); }
+  .viz figcaption { margin-top: 14px; font-size: var(--s--1); color: var(--faint); line-height: 1.7; }
+
+  .v-panel { fill: var(--ground-deep); stroke: var(--line); stroke-width: 1; }
+  .v-inner { fill: var(--ground); stroke: var(--line-soft); stroke-width: 1; }
+  .v-soft { fill: var(--line-soft); }
+  .v-grid { stroke: var(--line-soft); stroke-width: 1; fill: none; }
+  .v-bar { fill: var(--a2); }
+  .v-bar-2 { fill: var(--a1); }
+  .v-area { fill: var(--a1); opacity: 0.09; }
+  .v-curve { stroke: url(#lg); stroke-width: 3; fill: none; }
+  .v-dot { fill: var(--a1); }
+  .v-ring { stroke: var(--a1); fill: none; stroke-width: 2; opacity: 0.35; }
+  .v-guide { stroke: var(--a1); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.5; fill: none; }
+  .v-track { stroke: var(--line-soft); stroke-width: 8; fill: none; }
+  .v-arc { stroke: url(#lg); stroke-width: 8; fill: none; stroke-linecap: round; }
+
+  .proj-icon { width: 44px; height: 44px; display: block; color: var(--faint); margin-bottom: 4px; }
+  .i-stroke { stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .i-accent { stroke: var(--a1); fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .i-fill { fill: var(--a1); }
+
   /* ---------- sections ---------- */
   section { padding-block: clamp(52px, 8vw, 96px); }
   .sec-top { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-bottom: clamp(30px, 5vw, 52px); }
@@ -347,6 +373,45 @@
       </g>
       <circle cx="96" cy="14" r="6.5" fill="url(#lg)"/>
     </symbol>
+
+    <!-- dashboards & KPI monitoring -->
+    <symbol id="ic-dash" viewBox="0 0 48 48">
+      <rect class="i-stroke" x="5" y="8" width="38" height="32" rx="4"/>
+      <line class="i-stroke" x1="5" y1="16" x2="43" y2="16"/>
+      <line class="i-accent" x1="13" y1="34" x2="13" y2="28"/>
+      <line class="i-accent" x1="21" y1="34" x2="21" y2="23"/>
+      <line class="i-accent" x1="29" y1="34" x2="29" y2="30"/>
+      <line class="i-accent" x1="37" y1="34" x2="37" y2="21"/>
+    </symbol>
+
+    <!-- process analysis & bottlenecks -->
+    <symbol id="ic-flow" viewBox="0 0 48 48">
+      <path class="i-stroke" d="M11 13 L22 22 M11 24 L22 24 M11 35 L22 26"/>
+      <circle class="i-stroke" cx="8" cy="13" r="3"/>
+      <circle class="i-stroke" cx="8" cy="24" r="3"/>
+      <circle class="i-stroke" cx="8" cy="35" r="3"/>
+      <path class="i-accent" d="M22 20 L27 24 L22 28"/>
+      <line class="i-accent" x1="29" y1="24" x2="40" y2="24"/>
+      <circle class="i-fill" cx="41" cy="24" r="3.2"/>
+    </symbol>
+
+    <!-- reporting & workflow automation -->
+    <symbol id="ic-auto" viewBox="0 0 48 48">
+      <path class="i-stroke" d="M28 6 H12 a3 3 0 0 0-3 3 v30 a3 3 0 0 0 3 3 h16"/>
+      <line class="i-stroke" x1="15" y1="15" x2="26" y2="15"/>
+      <line class="i-stroke" x1="15" y1="22" x2="24" y2="22"/>
+      <line class="i-stroke" x1="15" y1="29" x2="26" y2="29"/>
+      <path class="i-accent" d="M40 20 a10 10 0 1 1-4-6"/>
+      <path class="i-accent" d="M40 12 v8 h-8"/>
+    </symbol>
+
+    <!-- forecasting & resource allocation -->
+    <symbol id="ic-fore" viewBox="0 0 48 48">
+      <path class="i-stroke" d="M8 8 v32 h32"/>
+      <path class="i-stroke" d="M13 33 L21 25 L27 29"/>
+      <path class="i-accent" d="M27 29 L34 19 L42 13" stroke-dasharray="4 4"/>
+      <circle class="i-fill" cx="42" cy="13" r="3.4"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -374,6 +439,8 @@
   </header>
 
   <div class="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
     <svg class="mark" viewBox="0 0 116 96" role="img" aria-label="لوگوی هلیا موزونی / Helia Mozony logo"><use href="#hm"/></svg>
 
     <h1>
@@ -407,6 +474,71 @@
         <span class="arrow" aria-hidden="true">↓</span>
       </a>
       <a class="btn-ghost" href="https://www.linkedin.com/in/helia-mozony" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+      </div>
+
+      <figure class="viz reveal">
+        <svg viewBox="0 0 440 332" role="img" aria-label="نمای نمادین از یک داشبورد تحلیل داده / Schematic of an analytics dashboard">
+          <rect class="v-panel" x="0.5" y="0.5" width="439" height="331" rx="18"/>
+
+          <rect class="v-soft" x="20" y="20" width="96" height="9" rx="4.5"/>
+          <rect class="v-soft" x="352" y="19" width="30" height="11" rx="5.5"/>
+          <rect class="v-soft" x="390" y="19" width="30" height="11" rx="5.5"/>
+
+          <g>
+            <rect class="v-inner" x="20.5" y="46.5" width="127" height="58" rx="10"/>
+            <rect class="v-soft" x="34" y="60" width="42" height="7" rx="3.5"/>
+            <rect class="v-bar" x="34" y="82" width="7" height="10" rx="3"/>
+            <rect class="v-bar" x="45" y="76" width="7" height="16" rx="3"/>
+            <rect class="v-bar" x="56" y="84" width="7" height="8" rx="3"/>
+            <rect class="v-bar-2" x="67" y="70" width="7" height="22" rx="3"/>
+          </g>
+          <g>
+            <rect class="v-inner" x="156.5" y="46.5" width="127" height="58" rx="10"/>
+            <rect class="v-soft" x="170" y="60" width="52" height="7" rx="3.5"/>
+            <path class="v-curve" d="M170 88 L186 80 L202 84 L218 70 L234 74" stroke-width="2.5"/>
+            <circle class="v-dot" cx="234" cy="74" r="3"/>
+          </g>
+          <g>
+            <rect class="v-inner" x="292.5" y="46.5" width="127" height="58" rx="10"/>
+            <rect class="v-soft" x="306" y="60" width="36" height="7" rx="3.5"/>
+            <g transform="rotate(-90 390 79)">
+              <circle class="v-track" cx="390" cy="79" r="15"/>
+              <circle class="v-arc" cx="390" cy="79" r="15" stroke-dasharray="66 28.2"/>
+            </g>
+            <rect class="v-soft" x="306" y="78" width="24" height="7" rx="3.5"/>
+          </g>
+
+          <rect class="v-inner" x="20.5" y="120.5" width="399" height="140" rx="12"/>
+          <line class="v-grid" x1="36" y1="160" x2="404" y2="160"/>
+          <line class="v-grid" x1="36" y1="192" x2="404" y2="192"/>
+          <line class="v-grid" x1="36" y1="224" x2="404" y2="224"/>
+          <path class="v-area" d="M36 224 L88 206 L140 214 L192 180 L244 188 L296 152 L348 160 L400 140 L400 244 L36 244 Z"/>
+          <path class="v-curve" d="M36 224 L88 206 L140 214 L192 180 L244 188 L296 152 L348 160 L400 140"/>
+          <line class="v-guide" x1="296" y1="158" x2="296" y2="244"/>
+          <circle class="v-ring" cx="296" cy="152" r="8.5"/>
+          <circle class="v-dot" cx="296" cy="152" r="4"/>
+
+          <g>
+            <rect class="v-bar" x="28" y="292" width="9" height="16" rx="3"/>
+            <rect class="v-bar" x="45" y="284" width="9" height="24" rx="3"/>
+            <rect class="v-bar" x="62" y="296" width="9" height="12" rx="3"/>
+            <rect class="v-bar" x="79" y="278" width="9" height="30" rx="3"/>
+            <rect class="v-bar-2" x="96" y="286" width="9" height="22" rx="3"/>
+            <rect class="v-bar" x="113" y="290" width="9" height="18" rx="3"/>
+            <rect class="v-bar" x="130" y="272" width="9" height="36" rx="3"/>
+            <rect class="v-bar" x="147" y="288" width="9" height="20" rx="3"/>
+            <rect class="v-bar" x="164" y="280" width="9" height="28" rx="3"/>
+            <rect class="v-bar-2" x="181" y="268" width="9" height="40" rx="3"/>
+          </g>
+          <rect class="v-soft" x="292" y="278" width="128" height="8" rx="4"/>
+          <rect class="v-soft" x="292" y="296" width="86" height="8" rx="4"/>
+        </svg>
+        <figcaption>
+          <span class="fa">نمای نمادین از جنس کار روزانه: شاخص‌ها بالا، روند در میانه، و جزئیات پایین. تصویر شماتیک است، نه دادهٔ واقعی شرکت.</span>
+          <span class="en">A schematic of the everyday work: metrics on top, the trend in the middle, the detail below. Illustration only — not real company data.</span>
+        </figcaption>
+      </figure>
     </div>
   </div>
 
@@ -639,6 +771,7 @@
 
     <div class="projects">
       <article class="proj reveal">
+        <svg class="proj-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#ic-dash"/></svg>
         <span class="when num">Dashboards</span>
         <h3><span class="fa">داشبورد و پایش شاخص‌ها</span><span class="en">Dashboards &amp; KPI monitoring</span></h3>
         <p>
@@ -648,6 +781,7 @@
       </article>
 
       <article class="proj reveal">
+        <svg class="proj-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#ic-flow"/></svg>
         <span class="when num">Process</span>
         <h3><span class="fa">تحلیل فرایند و گلوگاه‌یابی</span><span class="en">Process analysis &amp; bottlenecks</span></h3>
         <p>
@@ -657,6 +791,7 @@
       </article>
 
       <article class="proj reveal">
+        <svg class="proj-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#ic-auto"/></svg>
         <span class="when num">Automation</span>
         <h3><span class="fa">اتوماسیون گزارش و گردش‌کار</span><span class="en">Reporting &amp; workflow automation</span></h3>
         <p>
@@ -666,6 +801,7 @@
       </article>
 
       <article class="proj reveal">
+        <svg class="proj-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#ic-fore"/></svg>
         <span class="when num">Forecasting</span>
         <h3><span class="fa">پیش‌بینی تقاضا و تخصیص منابع</span><span class="en">Forecasting &amp; resource allocation</span></h3>
         <p>
