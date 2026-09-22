@@ -3,7 +3,7 @@
 A single-page bilingual (Persian / English) personal site for **Helia Mozony**,
 Business Data Analyst at SnappMarket.
 
-**Live:** https://GITHUB_USER.github.io/REPO_NAME/
+**Live:** https://helmofski.github.io/helia-mozony-landing/
 
 ## What is here
 
